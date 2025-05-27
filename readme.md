@@ -51,13 +51,16 @@ python -m venv .venv
 ### 3. Install dependencies
 pip install -r requirements.txt
 
-### 4. Install NLP Model for Receipt Processing
+### 4. Create Test DB or Connect/Enter with DB 
+create `db.sqlite3` file in main root dir.
+
+### 5. Install NLP Model for Receipt Processing
 python -m spacy download en_core_web_sm
 
-### 5. Apply migrations
+### 6. Apply migrations
 python manage.py migrate
 
-### 6. Run the server
+### 7. Run the server
 python manage.py runserver
 
 ---
