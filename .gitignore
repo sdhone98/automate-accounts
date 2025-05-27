@@ -6,8 +6,7 @@ __pycache__/
 
 # ENVIRONMENT
 .venv/
-env/
-env
+.env
 
 # DJANGO DB
 db.sqlite3
