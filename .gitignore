@@ -4,9 +4,10 @@ __pycache__/
 *.py[cod]
 *.pyc
 
-# environment
+# ENVIRONMENT
 .venv/
 env/
+.env
 
 # DJANGO DB
 db.sqlite3
