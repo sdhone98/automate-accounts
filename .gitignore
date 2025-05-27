@@ -18,3 +18,7 @@ Thumbs.db
 
 # LOGS
 *.log
+
+# MEDIA
+media/
+media/receipts/
