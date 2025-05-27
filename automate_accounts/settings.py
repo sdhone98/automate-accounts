@@ -34,6 +34,10 @@ INSTALLED_APPS = [
     'receipts',
 ]
 
+# MEDIA FILE SETTINGS
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
