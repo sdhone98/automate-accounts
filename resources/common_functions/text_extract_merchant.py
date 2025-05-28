@@ -15,7 +15,7 @@ def extract_merchant_heuristic(text):
     # PICK FIRST LINE WITH MOSTLY UPPERCASE LETTERS OR LENGTH > 3
     # CHECK FIRST 5 LINES
     for line in lines[:5]:
-        if line.isupper() and len(line) > 3:
+        if line.isupper() or len(line) > 3:
             return line.strip()
     return None
 
