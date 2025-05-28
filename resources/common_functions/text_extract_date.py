@@ -32,6 +32,17 @@ def extract_date(text):
 
         # DD-MM-YY or D-M-YY
         (r"\b\d{1,2}-\d{1,2}-\d{2}\b", "%d-%m-%y"),
+
+        # DD/M/YYYY
+        (r"\b\d{1,2}/\d{1,2}/\d{2,4}\b", "%m/%d/%Y"),
+
+        # DD/M/YYYY 00:00 AM
+        (r"\b\d{1,2}/\d{1,2}/\d{2,4}\s\d{1,2}:\d{1,2}\s*(AM|PM|am|pm)\b", "%m/%d/%Y"),
+
+        # Month DD, YYYY (November 27, 2023)
+        (r"\b(?:January|February|March|April|May|June|July|August|September|October|November|December|JANUARY|FEBRUARY|MARCH|APRIL|MAY|JUNE|JULY|AUGUST|SEPTEMBER|OCTOBER|NOVEMBER|DECEMBER|january|february|march|april|may|june|july|august|september|october|november|december)\s+\d{1,2},\s+\d{4}\b",
+         "%B %d, %Y"),
+
     ]
 
     for pattern, date_format in date_patterns:
