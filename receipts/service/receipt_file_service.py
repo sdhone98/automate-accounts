@@ -114,7 +114,7 @@ def process_receipt(receipt_file: ReceiptFile):
     receipt_file.save()
 
     receipt, created = Receipt.objects.update_or_create(
-        file_path=receipt_file,
+        receipt_file=receipt_file,
         defaults={
             'purchased_at': purchased_at,
             'merchant_name': merchant_name,
