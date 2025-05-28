@@ -146,8 +146,12 @@ class UnProcessReceiptListView(APIView):
 class ProcessReceiptListView(APIView):
     def get(self, request, receipt_id=None):
         try:
+            filter_para = None
+            # CHECK QUERY PARAMS AVAILABLE NOR NOT FOR FILTER
+            if request.query_params:
+                filter_para = request.query_params
             if receipt_id is not None:
-                receipt = receipt_service.fetch_process_receipt_by_id(receipt_id)
+                receipt = receipt_service.fetch_process_receipt_by_id(receipt_id, filter_para)
                 serializer = ReceiptSerializer(receipt)
                 return build_response(
                     data=serializer.data,
@@ -156,7 +160,7 @@ class ProcessReceiptListView(APIView):
                     response_type=constant.SUCCESS
                 )
             else:
-                receipts = receipt_service.fetch_all_process_receipts()
+                receipts = receipt_service.fetch_all_process_receipts(filter_para)
                 serializer = ReceiptSerializer(receipts, many=True)
                 return build_response(
                     data=serializer.data,
