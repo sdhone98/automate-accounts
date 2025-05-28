@@ -132,8 +132,7 @@ curl --location 'http://127.0.0.1:8000/process' \
 ### Example cURL
 
 ```bash
-curl --location --request GET 'http://127.0.0.1:8000/un-process' \
---form 'file=@"/C:/Users/sdhon/Desktop/Sagar Dhone.pdf"'
+curl --location 'http://127.0.0.1:8000/un-process'
 ```
 
 ### Response Example
